@@ -32,8 +32,7 @@ const CTASection = () => {
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="text-base font-semibold gap-2 w-full sm:w-auto border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            className="text-base font-semibold gap-2 w-full sm:w-auto bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
             asChild
           >
             <a href="https://wa.me/79173988243" target="_blank" rel="noopener noreferrer">
