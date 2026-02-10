@@ -4,9 +4,9 @@ import { Button } from "@/components/ui/button";
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden text-primary-foreground animate-gradient-shift" style={{ background: "linear-gradient(-45deg, hsl(2, 87%, 30%), hsl(350, 80%, 25%), hsl(0, 0%, 8%), hsl(2, 87%, 35%))", backgroundSize: "300% 300%" }}>
-      {/* Decorative accent */}
-      <div className="absolute -top-40 -right-40 h-[500px] w-[500px] rounded-full bg-primary/20 blur-3xl" />
-      <div className="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-primary/10 blur-3xl" />
+      {/* Decorative glows */}
+      <div className="absolute -top-32 -right-32 h-[400px] w-[400px] rounded-full bg-[hsl(2,87%,54%)] opacity-20 blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-[hsl(15,90%,50%)] opacity-15 blur-3xl" />
 
       <div className="container relative py-24 md:py-36 lg:py-44">
         <div className="max-w-2xl space-y-6">
