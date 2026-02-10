@@ -6,23 +6,27 @@ const CTASection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="contacts" className="py-20 md:py-28 text-primary-foreground animate-gradient-shift" style={{ background: "linear-gradient(-45deg, hsl(2, 87%, 54%), hsl(350, 80%, 45%), hsl(15, 90%, 50%), hsl(2, 87%, 40%))", backgroundSize: "300% 300%" }}>
+    <section id="contacts" className="relative py-20 md:py-28 overflow-hidden animate-gradient-shift" style={{ background: "linear-gradient(-45deg, hsl(2, 87%, 30%), hsl(350, 80%, 25%), hsl(0, 0%, 8%), hsl(2, 87%, 35%))", backgroundSize: "300% 300%" }}>
+      {/* Decorative glows */}
+      <div className="absolute -top-32 -right-32 h-[400px] w-[400px] rounded-full bg-[hsl(2,87%,54%)] opacity-20 blur-3xl" />
+      <div className="absolute -bottom-20 -left-20 h-[300px] w-[300px] rounded-full bg-[hsl(15,90%,50%)] opacity-15 blur-3xl" />
+
       <div
-        className={`container text-center max-w-2xl space-y-6 ${
+        className={`container relative text-center max-w-2xl space-y-6 ${
           isVisible ? "animate-fade-up" : "opacity-0"
         }`}
         ref={ref}
       >
-        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-white">
           Начните зарабатывать сегодня
         </h2>
-        <p className="text-primary-foreground/70 text-lg leading-relaxed">
+        <p className="text-white/70 text-lg leading-relaxed">
           Свяжитесь с нами в удобном мессенджере — расскажем подробности и поможем начать.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <Button
             size="lg"
-            className="text-base font-semibold gap-2 w-full sm:w-auto"
+            className="text-base font-semibold gap-2 w-full sm:w-auto bg-[hsl(2,87%,54%)] text-white hover:bg-[hsl(2,87%,48%)]"
             asChild
           >
             <a href="https://t.me/alfabank_vigodno" target="_blank" rel="noopener noreferrer">
@@ -32,7 +36,7 @@ const CTASection = () => {
           </Button>
           <Button
             size="lg"
-            className="text-base font-semibold gap-2 w-full sm:w-auto bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
+            className="text-base font-semibold gap-2 w-full sm:w-auto bg-white text-[hsl(0,0%,8%)] hover:bg-white/90"
             asChild
           >
             <a href="https://wa.me/79173988243" target="_blank" rel="noopener noreferrer">
