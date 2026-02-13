@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
@@ -14,6 +14,29 @@ const navLinks = [
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          const top = visible.reduce((a, b) =>
+            a.boundingClientRect.top < b.boundingClientRect.top ? a : b
+          );
+          setActiveSection("#" + top.target.id);
+        }
+      },
+      { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
+    );
+
+    navLinks.forEach(({ href }) => {
+      const el = document.querySelector(href);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleClick = (href: string) => {
     setOpen(false);
@@ -34,9 +57,18 @@ const Header = () => {
             <button
               key={link.href}
               onClick={() => handleClick(link.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className={`relative text-sm font-medium transition-colors pb-1 ${
+                activeSection === link.href
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-primary"
+              }`}
             >
               {link.label}
+              <span
+                className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  activeSection === link.href ? "w-full" : "w-0"
+                }`}
+              />
             </button>
           ))}
           <Button size="sm" onClick={() => handleClick("#contacts")}>
@@ -58,7 +90,11 @@ const Header = () => {
                 <button
                   key={link.href}
                   onClick={() => handleClick(link.href)}
-                  className="text-left text-base font-medium text-foreground py-2"
+                  className={`text-left text-base font-medium py-2 border-l-2 pl-3 transition-colors ${
+                    activeSection === link.href
+                      ? "text-primary border-primary"
+                      : "text-foreground border-transparent"
+                  }`}
                 >
                   {link.label}
                 </button>
