@@ -131,4 +131,15 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
+
+  .animate-cat-wave {
+    animation: catWave 1.5s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+
+  @keyframes catWave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+  }
 }
