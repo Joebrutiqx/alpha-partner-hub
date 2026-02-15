@@ -23,15 +23,25 @@ const HeroSection = () => {
               Приглашай клиентов в Альфа-Банк и получай вознаграждение за каждого.
               Простой старт, прозрачные условия, стабильный доход.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
               <Button
                 size="lg"
                 className="text-base font-semibold gap-2"
                 asChild
               >
-                <a href="https://t.me/alfabank_vigodno" target="_blank" rel="noopener noreferrer">
+                <a href="https://t.me/shiFar22" target="_blank" rel="noopener noreferrer">
                   <MessageCircle className="h-5 w-5" />
                   Написать в Telegram
+                </a>
+              </Button>
+              <Button
+                size="lg"
+                className="text-base font-semibold gap-2 bg-[hsl(200,100%,40%)] text-white hover:bg-[hsl(200,100%,35%)]"
+                asChild
+              >
+                <a href="https://t.me/alfabank_vigodno" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="h-5 w-5" />
+                  Группа в Telegram
                 </a>
               </Button>
               <Button

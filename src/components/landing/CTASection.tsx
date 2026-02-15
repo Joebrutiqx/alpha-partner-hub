@@ -23,15 +23,25 @@ const CTASection = () => {
         <p className="text-white/80 text-xl leading-relaxed">
           Свяжитесь с нами в удобном мессенджере — расскажем подробности и поможем начать.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 pt-2">
           <Button
             size="lg"
             className="text-base font-semibold gap-2 w-full sm:w-auto bg-[hsl(2,87%,54%)] text-white hover:bg-[hsl(2,87%,48%)]"
             asChild
           >
-            <a href="https://t.me/alfabank_vigodno" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/shiFar22" target="_blank" rel="noopener noreferrer">
               <MessageCircle className="h-5 w-5" />
               Telegram
+            </a>
+          </Button>
+          <Button
+            size="lg"
+            className="text-base font-semibold gap-2 w-full sm:w-auto bg-[hsl(200,100%,40%)] text-white hover:bg-[hsl(200,100%,35%)]"
+            asChild
+          >
+            <a href="https://t.me/alfabank_vigodno" target="_blank" rel="noopener noreferrer">
+              <MessageCircle className="h-5 w-5" />
+              Группа в Telegram
             </a>
           </Button>
           <Button
