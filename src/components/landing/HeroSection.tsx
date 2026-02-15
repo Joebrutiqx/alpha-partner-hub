@@ -1,5 +1,7 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TelegramIcon from "@/components/icons/TelegramIcon";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import alfaCat from "@/assets/alfa-cat.png";
 
 const HeroSection = () => {
@@ -26,32 +28,32 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 pt-2">
               <Button
                 size="lg"
-                className="text-base font-semibold gap-2"
+                className="text-base font-semibold gap-2 bg-[hsl(200,100%,40%)] text-white hover:bg-[hsl(200,100%,35%)] shadow-lg shadow-[hsl(200,100%,40%)]/30"
                 asChild
               >
                 <a href="https://t.me/shiFar22" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-5 w-5" />
+                  <TelegramIcon className="h-5 w-5" />
                   Написать в Telegram
                 </a>
               </Button>
               <Button
                 size="lg"
-                className="text-base font-semibold gap-2 bg-[hsl(200,100%,40%)] text-white hover:bg-[hsl(200,100%,35%)]"
+                className="text-base font-semibold gap-2 bg-[hsl(200,80%,30%)] text-white hover:bg-[hsl(200,80%,25%)] shadow-lg shadow-[hsl(200,80%,30%)]/30 border border-[hsl(200,100%,50%)]/20"
                 asChild
               >
                 <a href="https://t.me/alfabank_vigodno" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="h-5 w-5" />
+                  <TelegramIcon className="h-5 w-5" />
                   Группа в Telegram
                 </a>
               </Button>
               <Button
                 size="lg"
-                className="text-base font-semibold gap-2 bg-primary-foreground text-foreground hover:bg-primary-foreground/90"
+                className="text-base font-semibold gap-2 bg-[hsl(142,70%,40%)] text-white hover:bg-[hsl(142,70%,35%)] shadow-lg shadow-[hsl(142,70%,40%)]/30"
                 asChild
               >
                 <a href="https://wa.me/79173988243" target="_blank" rel="noopener noreferrer">
+                  <WhatsAppIcon className="h-5 w-5" />
                   Написать в WhatsApp
-                  <ArrowRight className="h-5 w-5" />
                 </a>
               </Button>
             </div>
